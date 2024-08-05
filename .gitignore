@@ -1,0 +1,85 @@
+# Visual Studio Cache files
+.vscode/
+.vscode/*
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto generated files
+Generated\ Files/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# Auto generated files (Mobile)
+*.apk
+*.ap_
+*.aab
+*.java
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Uncomment if you have tasks that create the project's static files in wwwroot
+# wwwroot/
+
+# MSTest test Results
+[Tt]est[Rr]esult*
+[Tt]est[Rr]esults/
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Build directories
+build/
+builds/
+
+# Build artifacts
+*.ipa
+*.app
+
+# Razor and MVC specific files
+wwwroot/node_modules/
+wwwroot/lib/
+*.css
+*.map
+*.min.css
+*.min.js
+*.ts
+
+# Ignore all dll files
+*.dll
+
+# Ignore build output folders
+[Bb]in/
+[Oo]bj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.rsuser
+*.userosscache
+*.sln.docstates
