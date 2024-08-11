@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bO9f8risZ6vECmWq3uBKTU5PRAuOG8RLm3zUOf6WwXk=",
+  "Hash": "bUG/AZbO2ENOzNdgHpGWZGfws6z5yT+U31d6rTrtbJI=",
   "Source": "FormsMvcWeb",
   "BasePath": "_content/FormsMvcWeb",
   "Mode": "Default",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/4.jpg"
+    },
+    {
+      "Identity": "/Users/kabaliercan/Desktop/aspnetcore-dersleri/FormsMvcWeb/wwwroot/img/4850ed1c-da14-4147-814b-9dc789a13892.png",
+      "SourceId": "FormsMvcWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kabaliercan/Desktop/aspnetcore-dersleri/FormsMvcWeb/wwwroot/",
+      "BasePath": "_content/FormsMvcWeb",
+      "RelativePath": "img/4850ed1c-da14-4147-814b-9dc789a13892.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/4850ed1c-da14-4147-814b-9dc789a13892.png"
     },
     {
       "Identity": "/Users/kabaliercan/Desktop/aspnetcore-dersleri/FormsMvcWeb/wwwroot/img/5.jpg",
