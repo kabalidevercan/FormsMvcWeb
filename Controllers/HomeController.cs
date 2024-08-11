@@ -23,7 +23,6 @@ public class HomeController : Controller
         {
             ViewBag.SearchString = searchString;
             products = products.Where(p => p.Name.ToLower().Contains(searchString)).ToList();
-
         }
 
         if (!String.IsNullOrEmpty(category) && category != "0")
@@ -33,14 +32,37 @@ public class HomeController : Controller
 
         }
 
-        ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
+        // ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name", category);
 
-        return View(products);
+        var model = new ProductViewModel()
+        {
+            Products = products,
+            Categories = Repository.Categories,
+            SelectedCategory = category
+
+        };
+
+        return View(model);
     }
 
-    public IActionResult Privacy()
+    public IActionResult Create()
     {
+        ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
+
         return View();
     }
 
+    [HttpPost]
+    public IActionResult Create(Product model)
+    {
+        if (ModelState.IsValid)
+        {
+            model.ProductId = Repository.Products.Count + 1;
+            Repository.CreateProduct(model);
+            return RedirectToAction("Index");
+        }
+        ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
+        return View(model);
+
+    }
 }
