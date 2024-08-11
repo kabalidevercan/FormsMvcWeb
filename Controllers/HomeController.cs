@@ -53,10 +53,34 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult Create(Product model)
+    public async Task<IActionResult> Create(Product model, IFormFile imageFile)
     {
+        var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+        var extension = Path.GetExtension(imageFile.FileName);
+        var randomName = string.Format($"{Guid.NewGuid().ToString()}{extension}");
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", randomName);
+
+        if (imageFile != null)
+        {
+            if (!allowedExtensions.Contains(extension))
+            {
+                ModelState.AddModelError("", "Gecerli bir resim turu secin!");
+            }
+        }
+
+
+
         if (ModelState.IsValid)
         {
+            if (imageFile != null)
+            {
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await imageFile.CopyToAsync(stream);
+                }
+            }
+
+            model.Image = randomName;
             model.ProductId = Repository.Products.Count + 1;
             Repository.CreateProduct(model);
             return RedirectToAction("Index");
@@ -65,4 +89,25 @@ public class HomeController : Controller
         return View(model);
 
     }
+
+
+    public IActionResult Edit(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+
+        var entity = Repository.Products.FirstOrDefault(p => p.ProductId == id);
+
+        if (entity == null)
+        {
+            return NotFound();
+        }
+
+        ViewBag.Categories = new SelectList(Repository.Categories, "CategoryId", "Name");
+        return View(entity);
+
+    }
+
 }

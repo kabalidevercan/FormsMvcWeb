@@ -14,11 +14,10 @@ namespace FormsMvcWeb.Models
 
         [Required]
         [Display(Name = "Urun Adi")]
-        public string? Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [Required]
         [Display(Name = "Fiyat")]
-        [Range(0, 100)]
         public decimal? Price { get; set; }
 
         [Display(Name = "Resim")]
